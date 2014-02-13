@@ -1,0 +1,26 @@
+{
+  "name": "arr-cache",
+  "version": "0.0.1",
+  "description": "Simple cache module using array as storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec --timeout 5000 --growl test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/djelic/arr-cache.git"
+  },
+  "keywords": [
+    "cache",
+    "array",
+    "storage"
+  ],
+  "author": "David Jelic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djelic/arr-cache/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  }
+}
