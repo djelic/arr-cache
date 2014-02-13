@@ -27,9 +27,13 @@ module.exports = function cache(opt) {
   }
 
   function fetch(key) {
-    return storage.map(function (item) {
-      if (item.key === key) return item.data;
-    }).pop();
+    var i = storage.length;
+    while (i--) {
+      if (storage[i].key === key) {
+        return storage[i].data;
+      }
+    }
+    return;
   }
 
   return {
