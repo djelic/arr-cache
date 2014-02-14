@@ -1,7 +1,8 @@
 'use strict';
 
 // Module dependencies
-var util = require('util');
+var util = require('util')
+  , crypto = require('crypto');
 
 
 module.exports = function cache(opt) {
@@ -36,8 +37,16 @@ module.exports = function cache(opt) {
     return;
   }
 
+  function key(data) {
+    var args = Array.prototype.slice.call(arguments);
+    return crypto.createHash('sha1')
+      .update(args.join(''))
+      .digest('hex');
+  }
+
   return {
     add: add,
-    fetch: fetch
+    fetch: fetch,
+    key: key
   }
 };

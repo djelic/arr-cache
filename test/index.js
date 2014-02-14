@@ -32,5 +32,21 @@ describe('Cache', function () {
         done();
       }, keeptime);
     });
-  })
+  });
+
+  describe('#key()', function () {
+    var hash = '87d1c20b83915df8183f2989aea504060a525e04';
+
+    it('should return hashed key when called with single param', function () {
+      var data = 'sample key data'
+        , key = c.key(data);
+      assert.equal(key, hash);
+    });
+
+    it('should return hashed key when called with multiple params', function () {
+      var data = ['sample ', 'key ', 'data']
+        , key = c.key.apply(c, data);
+      assert.equal(key, hash);
+    });
+  });
 });
