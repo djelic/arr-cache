@@ -22,7 +22,7 @@ module.exports = function cache(opt) {
       key: keygen(key),
       data: data,
       timestamp: Date.now(),
-      duration: (typeof duration === 'string') ? parseTime(duration) : opt.keeptime
+      duration: parseTime(duration) || opt.keeptime
     });
   }
 
@@ -45,7 +45,7 @@ module.exports = function cache(opt) {
   }
 
   function parseTime(timestr) {
-    var match = timestr.match(/^(\d*\.?\d*).*?([s,m,h]?)$/)
+    var match = timestr.toString().match(/^(\d*\.?\d*).*?([s,m,h]?)$/)
       , value = parseFloat(match[1]);
     switch (match[2]) {
       case 's': return value * 1000; break;
