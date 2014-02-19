@@ -1,6 +1,6 @@
 {
   "name": "arr-cache",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple cache module using array as storage",
   "main": "index.js",
   "scripts": {
