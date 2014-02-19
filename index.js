@@ -22,7 +22,7 @@ module.exports = function cache(opt) {
       key: keygen(key),
       data: data,
       timestamp: Date.now(),
-      duration: duration || opt.keeptime
+      duration: parseTime(duration) || opt.keeptime
     });
   }
 
